@@ -1,16 +1,26 @@
-package in.beli.beliin;
+package in.beli.beliin.view.activity;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import in.beli.beliin.R;
+import in.beli.beliin.view.fragment.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        overridePendingTransition(R.anim.fadein, R.anim.fadeout);
+        if (savedInstanceState == null) {
+             getSupportFragmentManager().beginTransaction()
+                     .add(android.R.id.content, new MainFragment()).commit();
+         }
     }
 
     @Override
@@ -28,10 +38,22 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_cart) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void setupToolbar(Toolbar toolbar) {
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar == null) {
+            throw new IllegalStateException("Action bar must not be null.");
+        }
+        actionBar.setDisplayHomeAsUpEnabled(false);
+        actionBar.setHomeButtonEnabled(false);
+        actionBar.setDisplayShowTitleEnabled(false);
+        toolbar.setVisibility(View.GONE);
     }
 }
