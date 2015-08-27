@@ -1,4 +1,4 @@
-package in.beli.beliin.view.activity;
+package in.beli.beliin.ui.activity;
 
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -9,9 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 
 import in.beli.beliin.R;
-import in.beli.beliin.view.fragment.MainFragment;
+import in.beli.beliin.ui.fragment.MainFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

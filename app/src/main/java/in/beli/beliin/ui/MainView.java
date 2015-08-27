@@ -1,4 +1,6 @@
-package in.beli.beliin.view;
+package in.beli.beliin.ui;
+
+import android.app.Activity;
 
 public interface MainView {
     void animateLogoUp();
@@ -6,4 +8,6 @@ public interface MainView {
     void animateEditTextFadeInUpBounce();
 
     void animatedToolbarFadeIn();
+
+    Activity getContext();
 }

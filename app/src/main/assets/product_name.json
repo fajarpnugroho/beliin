@@ -1,0 +1,64 @@
+{
+  "items": [
+    {
+      "id": "90910921",
+      "type": "susu",
+      "name": "susu dancow Actigo 400gr",
+      "price": "Rp 39.250,-"
+    },
+    {
+      "id": "81298302198301",
+      "type": "susu",
+      "name": "susu dancow chocolate ActiGo 400gr",
+      "price": "Rp 36.700,-"
+    },
+    {
+      "id": "12381738199874",
+      "type": "susu",
+      "name": "susu dancow balita 1+ DHA 800gr",
+      "price": "Rp 58.700,-"
+    },
+    {
+      "id": "21893012809412",
+      "type": "minyak",
+      "name": "Avena Minyak Goreng 1ltr – pouch",
+      "price": "Rp 12.000,-"
+    },
+    {
+      "id": "21983018240912",
+      "type": "minyak",
+      "name": "Bimoli Special Refil 2ltr",
+      "price": "Rp 26.750,-"
+    },
+    {
+      "id": "21381905010510",
+      "type": "minyak",
+      "name": "Bimoli Special Refill 1ltr",
+      "price": "Rp 14.800,-"
+    },
+    {
+      "id": "9849837984573953",
+      "type": "kopi",
+      "name": "Good Day Biasa",
+      "price": {}
+    },
+    {
+      "id": "1231400100141",
+      "type": "kopi",
+      "name": "Good Day Capucino",
+      "price": "Rp 111.300,-"
+    },
+    {
+      "id": "219810501802151",
+      "type": "kopi",
+      "name": "Kapal Api Grande",
+      "price": "Rp 96.800,-"
+    },
+    {
+      "id": "1101091209121",
+      "type": "kopi",
+      "name": "Kapal Api Grande White Coffie",
+      "price": "Rp 65.800,-"
+    }
+  ]
+}

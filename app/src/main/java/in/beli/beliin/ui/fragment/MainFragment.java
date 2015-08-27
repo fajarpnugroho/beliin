@@ -1,13 +1,15 @@
-package in.beli.beliin.view.fragment;
+package in.beli.beliin.ui.fragment;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,17 +17,32 @@ import android.view.animation.BounceInterpolator;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+import in.beli.beliin.Injector;
 import in.beli.beliin.R;
-import in.beli.beliin.view.MainView;
-import in.beli.beliin.view.activity.MainActivity;
+import in.beli.beliin.ui.presenter.MainPresenter;
+import in.beli.beliin.ui.MainView;
+import in.beli.beliin.ui.activity.MainActivity;
 
-public class MainFragment extends Fragment implements MainView {
+public class MainFragment extends BaseFragment implements MainView {
 
     @Bind(R.id.logo) ImageView logo;
     @Bind(R.id.search) EditText search;
     @Bind(R.id.action_bar) Toolbar toolbar;
+
+    @Inject MainPresenter presenter;
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        Injector.INSTANCE.getApplicationComponent().inject(this);
+        presenter.setView(this);
+        presenter.setRouter();
+    }
 
     @Nullable
     @Override
@@ -45,6 +62,9 @@ public class MainFragment extends Fragment implements MainView {
         animateEditTextFadeInUpBounce();
         animatedToolbarFadeIn();
     }
+
+    @OnClick(R.id.search)
+    void onEditTextSearchClick() { presenter.searchProduct(); }
 
     @Override
     public void animateLogoUp() {
@@ -100,4 +120,11 @@ public class MainFragment extends Fragment implements MainView {
             }
         }, 1600);
     }
+
+    @Override
+    public Activity getContext() {
+        return getActivity();
+    }
+
+
 }

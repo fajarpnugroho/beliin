@@ -1,4 +1,4 @@
-package in.beli.beliin.view.fragment;
+package in.beli.beliin.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import in.beli.beliin.R;
 
-public class EntranceFragment extends Fragment {
+public class EntranceFragment extends BaseFragment {
 
     @Nullable
     @Override

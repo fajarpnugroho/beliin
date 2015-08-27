@@ -1,4 +1,4 @@
-package in.beli.beliin.view.activity;
+package in.beli.beliin.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,11 +6,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
 
-import in.beli.beliin.R;
-import in.beli.beliin.view.EntranceView;
-import in.beli.beliin.view.fragment.EntranceFragment;
+import in.beli.beliin.ui.EntranceView;
+import in.beli.beliin.ui.fragment.EntranceFragment;
 
-public class EntranceActivity extends AppCompatActivity implements EntranceView {
+public class EntranceActivity extends BaseActivity implements EntranceView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
